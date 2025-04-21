@@ -1,0 +1,22 @@
+
+{
+    "rewrites": [
+      {
+        "source": "/tasks/:rest*",
+        "destination": "https://app-final-qfl0.onrender.com/tasks/:rest*"
+      },
+      {
+        "source": "/login",
+        "destination": "https://app-final-qfl0.onrender.com/login"
+      },
+      {
+        "source": "/register",
+        "destination": "https://app-final-qfl0.onrender.com/register"
+      },
+      {
+        "source": "/profile",
+        "destination": "https://app-final-qfl0.onrender.com/profile"
+      }
+    ]
+  }
+  
