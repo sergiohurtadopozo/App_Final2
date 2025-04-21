@@ -1,5 +1,6 @@
 // src/components/Login.jsx
 import React, { useState } from 'react';
+import API_URL from '../api';
 import './Styles/Login.css';
 
 function Login({ onAuthSuccess }) {
@@ -10,7 +11,7 @@ function Login({ onAuthSuccess }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/login', {
+      const response = await fetch(`${API_URL}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })

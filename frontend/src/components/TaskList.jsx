@@ -1,6 +1,7 @@
 // src/components/TaskList.jsx
 import React, { useState, useEffect } from 'react';
 import TaskItem from './TaskItem';
+import API_URL from '../api';
 import './Styles/TaskList.css';
 
 function TaskList({ refresh }) {
@@ -8,7 +9,7 @@ function TaskList({ refresh }) {
 
   const fetchTasks = () => {
     const token = localStorage.getItem('token');
-    fetch('/tasks', {
+    fetch(`${API_URL}/tasks`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token

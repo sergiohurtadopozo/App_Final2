@@ -1,5 +1,6 @@
 // src/components/AdminDashboard.jsx
 import React, { useState, useEffect } from 'react';
+import API_URL from '../api';
 import './Styles/AdminDashboard.css'; // Importa el archivo de estilos
 import CalendarView from './CalendarView';
 
@@ -9,7 +10,7 @@ function AdminDashboard() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     // El endpoint GET /tasks en el back-end, si el usuario es admin, debe incluir los datos del usuario en cada tarea
-    fetch('/tasks', {
+    fetch(`${API_URL}/tasks`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token

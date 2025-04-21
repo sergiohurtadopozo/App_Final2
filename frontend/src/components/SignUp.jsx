@@ -1,5 +1,6 @@
 // src/components/SignUp.jsx
 import React, { useState } from 'react';
+import API_URL from '../api';
 import './Styles/SignUp.css';  // Asegúrate de que la ruta sea la correcta
 
 function SignUp({ onAuthSuccess }) {
@@ -12,7 +13,7 @@ function SignUp({ onAuthSuccess }) {
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/register', {
+      const response = await fetch(`${API_URL}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, email, password, secretCode })
