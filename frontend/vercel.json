@@ -2,8 +2,8 @@
 {
     "rewrites": [
       {
-        "source": "/tasks/:rest*",
-        "destination": "https://app-final-qfl0.onrender.com/tasks/:rest*"
+        "source": "/tasks/:path*",
+        "destination": "https://app-final-qfl0.onrender.com/tasks/:path*"
       },
       {
         "source": "/login",
