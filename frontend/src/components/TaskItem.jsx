@@ -1,6 +1,6 @@
 // src/components/TaskItem.jsx
 import React, { useState } from 'react';
-import API_URL from '../api';
+
 import './Styles/TaskItem.css';
 
 function TaskItem({ task, onTaskChange }) {
@@ -12,7 +12,7 @@ function TaskItem({ task, onTaskChange }) {
 
   // 1. Eliminar tarea
   const handleDelete = () => {
-    fetch(`${API_URL}/tasks/${task.id}`, {
+    fetch(`/tasks/${task.id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

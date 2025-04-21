@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './Styles/TaskForm.css';
-import API_URL from '../api';
+
 
 function TaskForm({ onTaskAdded }) {
   const [title, setTitle] = useState('');
@@ -15,7 +15,7 @@ function TaskForm({ onTaskAdded }) {
     e.preventDefault();
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`${API_URL}/tasks`, {
+      const response = await fetch('/tasks', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

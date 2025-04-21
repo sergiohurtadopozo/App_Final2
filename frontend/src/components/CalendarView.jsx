@@ -1,7 +1,6 @@
 // src/components/CalendarView.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import FullCalendar from '@fullcalendar/react';
-import API_URL from '../api';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
@@ -17,7 +16,7 @@ function CalendarView() {
   // Carga inicial de eventos
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch(`${API_URL}/tasks`, {
+    fetch('/tasks', {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token

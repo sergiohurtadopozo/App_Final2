@@ -1,7 +1,7 @@
 // src/components/Dashboard.jsx
 import React, { useState, useEffect } from 'react';
 import './Styles/Dashboard.css';  // Ajusta la ruta si Dashboard.css está en otra carpeta
-import API_URL from '../api';
+
 
 function Dashboard() {
   const [profile, setProfile] = useState(null);
@@ -9,7 +9,7 @@ function Dashboard() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if(token) {
-      fetch(`${API_URL}/profile`, {
+      fetch('/profile', {
         headers: { 'Authorization': 'Bearer ' + token }
       })
       .then(response => response.json())
